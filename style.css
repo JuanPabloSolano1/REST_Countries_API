@@ -1,0 +1,45 @@
+form{
+  padding-top: 50px;
+}
+#search {
+  width: 300px !important;
+  margin-left: 30px;
+  margin-right: 20px;
+}
+#dropdown{
+  float: right !important;
+  margin-right: 30px !important;
+  top: -38px;
+  background-color: #1a2849 !important;
+}
+#result{
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  margin-left: 30px;
+}
+ img{
+  height: 220px;
+}
+.card:hover{
+  box-shadow: 0.5px 0.5px 6px 1px;
+}
+.card{
+  background-color: #eeeeee;
+  color: black;
+  height: 480px;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 5px;
+
+}
+#form{
+  display: flex;
+}
+#nav{
+  background-color: #1a2849 !important;
+}
+.card-body{
+  margin-top: 20px
+}

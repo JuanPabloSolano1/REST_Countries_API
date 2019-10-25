@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+			<title></title>
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+				<link rel="stylesheet" href="/Users/juan/Desktop/Countries API/css/uikit.css">
+					<script src="/Users/juan/Desktop/Countries API/js/uikit.js"></script>
+					<!-- UIkit CSS -->
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.2/css/uikit.min.css" />
+					<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+						<link rel="stylesheet" href="style.css">
+							<!-- UIkit JS -->
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.2/js/uikit.min.js"></script>
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.2/js/uikit-icons.min.js"></script>
+							<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+							<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+						</head>
+						<body>
+							<div id="container">
+								<nav id="nav" class="navbar navbar-light bg-light">
+									<span style="color: white;"class="navbar-brand mb-0 h1">Where In the World?</span>
+								</nav>
+								<div class="uk-margin">
+									<form id ="form" class="uk-search uk-search-default">
+										<span uk-search-icon></span>
+										<input id="search"class="uk-search-input" type="search" placeholder="Search for a Country">
+											<button style="color: white;"id="button" type="submit" class="btn btn-warning">Search</button>
+										</form>
+										<div id="dropdown"class="dropdown">
+											<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Filter By Regions
+    </button>
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+												<a class="dropdown-item" href="#">Americas</a>
+												<a class="dropdown-item" href="#">Asia</a>
+												<a class="dropdown-item" href="#">Africa</a>
+												<a class="dropdown-item" href="#">Europe</a>
+												<a class="dropdown-item" href="#">Oceania</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="result"></div>
+							</body>
+							<script src="Fetch.js"></script>
+							<script src="document.js"></script>
+							<script>
+
+  fetch_url(`https://restcountries.eu/rest/v2/all`)
+
+
+  button.addEventListener("click",(event)=>{
+    event.preventDefault()
+    result.innerText = ""
+      fetch_input(input.value)
+      if(input.value == ""){
+      fetch_url(`https://restcountries.eu/rest/v2/all`)
+      }
+    })
+  dropdown.forEach(element=>{
+    element.addEventListener("click",(event)=>{
+      event.preventDefault()
+      result.innerText = ""
+      console.log(element.innerText)
+     fetch_region(element.innerText)
+    })
+  })
+  </script>
+</html>
